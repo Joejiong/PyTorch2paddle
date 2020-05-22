@@ -1,0 +1,34 @@
+language: python
+python:
+  # We don't actually use the Travis Python, but this keeps it organized.
+  - "2.7"
+  - "3.6"
+install:
+  - sudo apt-get update
+  # We do this conditionally because it saves us some downloading if the
+  # version is the same.
+  - if [[ "$TRAVIS_PYTHON_VERSION" == "2.7" ]]; then
+      wget https://repo.continuum.io/miniconda/Miniconda2-latest-Linux-x86_64.sh -O miniconda.sh;
+    else
+      wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh;
+    fi
+  - bash miniconda.sh -b -p $HOME/miniconda
+  - export PATH="$HOME/miniconda/bin:$PATH"
+  - hash -r
+  - conda config --set always_yes yes --set changeps1 no
+  - conda update -q conda
+  # Useful for debugging any issues with conda
+  - conda info -a
+
+  - conda create -q -n test-environment python=$TRAVIS_PYTHON_VERSION
+  - source activate test-environment
+  - conda install pytorch torchvision cuda80 numpy scipy h5py -c pytorch -q
+  - conda install tensorflow -c conda-forge -q
+  - conda install theano pygpu -q
+  - python setup.py install
+
+script:
+  - TEST_TRANSFER_DIRECTION=keras2pytorch KERAS_BACKEND=theano python setup.py test
+  - TEST_TRANSFER_DIRECTION=keras2pytorch KERAS_BACKEND=tensorflow python setup.py test
+  - TEST_TRANSFER_DIRECTION=pytorch2keras KERAS_BACKEND=theano python setup.py test
+  - TEST_TRANSFER_DIRECTION=pytorch2keras KERAS_BACKEND=tensorflow python setup.py test
