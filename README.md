@@ -1,4 +1,4 @@
-# PyTorch2Paddle nn-transfer
+# PyTorch2Paddle 
 
 [![Build Status](https://travis-ci.org/Joejiong/PyTorch2paddle.svg?branch=master)](https://travis-ci.org/github/Joejiong/PyTorch2paddle)
 
