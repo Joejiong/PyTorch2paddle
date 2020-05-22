@@ -4,7 +4,7 @@
 
 **NOTE: This repository does not seem to yield the correct output anymore with the latest versions of paddle and keras and PyTorch. Take care to verify the results or use an alternative method for conversion.**
 
-This repository contains utilities for **converting PyTorch models to Keras|paddle and the other way around**. More specifically, it allows you to copy the weights from a PyTorch model to an identical model in Keras|paddle and vice-versa.
+This repository contains utilities for **converting PyTorch models to Keras|paddle and the other way around**. More specifically, it allows you to copy the weights from a PyTorch model to an identical model in Keras|PaddlePaddle fluid  and vice-versa.
 
 
 ## Installation
