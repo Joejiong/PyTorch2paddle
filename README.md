@@ -1,6 +1,6 @@
 # PyTorch2Paddle nn-transfer
 
-[![Build Status](https://travis-ci.org/gzuidhof/nn-transfer.svg?branch=master)](https://travis-ci.org/gzuidhof/nn-transfer)
+[![Build Status](https://travis-ci.org/Joejiong/PyTorch2paddle.svg?branch=master)](https://travis-ci.org/github/Joejiong/PyTorch2paddle)
 
 **NOTE: This repository does not seem to yield the correct output anymore with the latest versions of paddle and keras and PyTorch. Take care to verify the results or use an alternative method for conversion.**
 
