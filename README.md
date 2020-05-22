@@ -1,4 +1,4 @@
-# nn-transfer
+# PyTorch2Paddle nn-transfer
 
 [![Build Status](https://travis-ci.org/gzuidhof/nn-transfer.svg?branch=master)](https://travis-ci.org/gzuidhof/nn-transfer)
 
