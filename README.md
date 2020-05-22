@@ -37,3 +37,9 @@ See [**example.ipynb**](example.ipynb) for a small tutorial on how to use this l
 * This repository is fully PEP8 compliant, I recommend `flake8`.
 * It works for both Python 2 and 3.
 # PyTorch2paddle
+
+the whole project is setup with the following functionalities:
+
+- model code transfer: TODO
+- weights load: p2f_trans.py
+- training code transfer: TODO
